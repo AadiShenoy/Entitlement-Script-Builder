@@ -333,10 +333,9 @@ export default {
     <tr>
         <th style="width: 100px;">name</th>
         <th style="width: 50px;">type</th>
-      <th style="width: 100px;">required</th>
-       <th style="width: 50px;">possible values</th>
-       <th style="width: 50px;">description</th>
-      
+        <th style="width: 100px;">required</th>
+        <th style="width: 50px;">possible values</th>
+        <th>description</th>
     </tr>
     </thead>
     <tbody>
