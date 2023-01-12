@@ -251,6 +251,19 @@ export default {
 | --- | --- | --- | --- | --- |
 
 
+### Props
+
+| prop                                     | type             | required | default           | possible values                                      | description                                                                                                                                                                                                                                                                           |
+| ---------------------------------------- | ---------------- | -------- | ----------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| mode                                | String           | no      | dark  |         dark, light                                           | This will apply dark or light theme to header component                                                                                                                                                                                                                                    |
+| logo                         | Url         | no       | https://example.png            |                                                      | Brand / Company logo                                                                                                                                                                     |
+| logoAltText                         | String           | no       | Company Logo               |                                                      | Adds "alt" text to logo                                                                                                                                                                                             |
+| headerText                           | String  | no       | YML               |                                                      | Brand / company name                                                                                 |
+|  openMenuIcon.slotName                    | String            | no       |                   |                                                      | A Slot which can render a HTMLElement or a component                                                                                                                                                                                                                                   |
+| closeMenuIcon.slotName                        | String           | no       |      |                                                      | A Slot which can render a HTMLElement or a component                                                                                                                                                                                                                                                |
+| menuLinks                  | Array<Object>            | no       |   |                                                      | An object that allows user to pass menu links                                                                                                                                                                                                                                                              |
+| topRightSlot.slotName                 | String            | no       |     |                                                      | A Slot which can render a HTMLElement or a component                                                                                                                                                                                                                                                              |
+
 ### Menu Links Props
 
 <table class="table table-bordered table-striped">
@@ -294,21 +307,6 @@ export default {
       </tr>
     </tbody>
 </table>
-
-### Props
-
-| prop                                     | type             | required | default           | possible values                                      | description                                                                                                                                                                                                                                                                           |
-| ---------------------------------------- | ---------------- | -------- | ----------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| mode                                | String           | no      | dark  |         dark, light                                           | This will apply dark or light theme to header component                                                                                                                                                                                                                                    |
-| logo                         | Url         | no       | https://example.png            |                                                      | Brand / Company logo                                                                                                                                                                     |
-| logoAltText                         | String           | no       | Company Logo               |                                                      | Adds "alt" text to logo                                                                                                                                                                                             |
-| headerText                           | String  | no       | YML               |                                                      | Brand / company name                                                                                 |
-|  openMenuIcon.slotName                    | String            | no       |                   |                                                      | A Slot which can render a HTMLElement or a component                                                                                                                                                                                                                                   |
-| closeMenuIcon.slotName                        | String           | no       |      |                                                      | A Slot which can render a HTMLElement or a component                                                                                                                                                                                                                                                |
-| menuLinks                  | Array<Object>            | no       |   |                                                      | An object that allows user to pass menu links                                                                                                                                                                                                                                                              |
-| topRightSlot.slotName                 | String            | no       |     |                                                      | A Slot which can render a HTMLElement or a component                                                                                                                                                                                                                                                              |
-
-
 
 ## Installation
 
