@@ -250,6 +250,81 @@ export default {
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Electron |
 | --- | --- | --- | --- | --- |
 
+### Menu Items Props
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th style="width: 100px;">name</th>
+        <th style="width: 50px;">type</th>
+        <th style="width: 50px;">default</th>
+        <th>description</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>MenuNumber</td>
+          <td>Number</td>
+          <td></td>
+          <td>The MenuNumber denotes 'how many menu-items you want. Although Maximum is 5 and minimum is 1'</td>
+        </tr>
+        <tr>
+          <td>Font</td>
+          <td>Number</td>
+          <td></td>
+          <td>{optional}Specify the font-size. As the icons increase and decrease, Height will adjust automatically but Width will need to be adjusted maually</td>
+        </tr>
+        <tr>
+            <td>IconColor</td>
+            <td>String</td>
+            <th>""</th>
+            <td>Specify the color for the menu items/ navbar menu items e.g. "blue","#a595e9"</td>
+        </tr>
+        <tr>
+            <td>activeColor</td>
+            <td>String</td>
+            <th>""</th>
+            <td>Specify the background color for the active menu items/ navbar menu items e.g. "blue","#a595e9"</td>
+        </tr>
+        <tr>
+            <td>activeIconColor</td>
+            <td>String</td>
+            <th>""</th>
+            <td>Specify the color for the menu item/ navbar menu item e.g. "blue","#a595e9"</td>
+        </tr>
+        <tr>
+            <td>degree</td>
+            <td>String</td>
+            <th>""</th>
+            <td>{Optional} This is part of linear-gradient(degree, gradcolor1,gradcolor2), this will inturn overwrite activeColor and become the active background color. Specify the direction of background color for the active menu item/ navbar menu items e.g. "to left", "to right", "to bottom left" etc.</td>
+        </tr>
+        <tr>
+            <td>gradcolor1</td>
+            <td>String</td>
+            <th>""</th>
+            <td>{Optional} This is part of linear-gradient(degree, gradcolor1,gradcolor2), this will inturn overwrite activeColor and become the active background color. Specify the direction of background color for the active menu item/ navbar menu items e.g. "blue" etc.</td>
+        </tr>
+        <tr>
+            <td>gradcolor2</td>
+            <td>String</td>
+            <th>""</th>
+            <td>{Optional} This is part of linear-gradient(degree, gradcolor1,gradcolor2), this will inturn overwrite activeColor and become the active background color. Specify the direction of background color for the active menu item/ navbar menu items e.g. "green" etc.</td>
+        </tr>
+        <tr>
+            <td>icon1, icon2... icon5</td>
+            <td>String</td>
+            <th>""</th>
+            <td>Specify the name of the icon for each specific icon number(icon1, icon2) for the menu item/ navbar menu items. e.g. "bx bx-home", "fa fa-house" etc.</td>
+        </tr>
+        <tr>
+            <td>url1, url2... url5</td>
+            <td>String</td>
+            <th>""</th>
+            <td>Specify the name of the url for each specific url number(url1, url2) for the menu item/ navbar menu items. e.g. "/", "#contact" etc.</td>
+        </tr>
+    </tbody>
+</table>
+
 
 ### Menu Links Props
 
