@@ -1,29 +1,30 @@
-
 # Tailwind web components starter kit
 
-This is a starter kit to develop web components using Tailwind CSS. 
+This is a starter kit to develop web components using Tailwind CSS.
 
-Tailwind and web components do not play well together. 
+Tailwind and web components do not play well together.
 
 We managed to find a way to make them work without hacks or weird tech: just common technologies combined in a elegant way.
 
 No dependencies, based on [lit-element](https://lit.dev/docs/).
 
 ## How will you create a tailwind component?
+
 Here is a sample code:
 
 ```typescript
-import {html} from 'lit';
-import {customElement, property} from 'lit/decorators.js';
-import {TailwindElement} from '../shared/tailwind.element';
+import { html } from "lit";
+import { customElement, property } from "lit/decorators.js";
+import { TailwindElement } from "../shared/tailwind.element";
 
-import style from './test.component.scss?inline'; // #1
+import style from "./test.component.scss?inline"; // #1
 
-@customElement('test-component')
-export class TestComponent extends TailwindElement(style) { // #2
+@customElement("test-component")
+export class TestComponent extends TailwindElement(style) {
+  // #2
 
   @property()
-  name?: string = 'World';
+  name?: string = "World";
 
   render() {
     return html`
@@ -32,49 +33,53 @@ export class TestComponent extends TailwindElement(style) { // #2
         <b>${this.name}</b>
         !
       </p>
-      <button class="bg-blue-200 text-yellow-200 p-2 rounded-full text-2xl">Hello world!</button>
+      <button class="bg-blue-200 text-yellow-200 p-2 rounded-full text-2xl">
+        Hello world!
+      </button>
     `;
   }
 }
 ```
-It is based on the [lit element](https://lit.dev/docs/) technology: if you wrote a lit component before, you'll find it familiar.  
+
+It is based on the [lit element](https://lit.dev/docs/) technology: if you wrote a lit component before, you'll find it familiar.
 
 There are only two differences to a standard _LitElement_:
-1) You must import your styles from a separate file. And this is good for two reasons:
+
+1. You must import your styles from a separate file. And this is good for two reasons:
    - it separates the CSS from the logic
    - you can decide to use CSS or SCSS
-   - note the `?inline` at the end of the file path: if you don't add it, then vite will add the style to the head of the html. If you add it, the style is scoped into the component only  
-2) the class extends a _TailwindElement_ rather than a LitElement
+   - note the `?inline` at the end of the file path: if you don't add it, then vite will add the style to the head of the html. If you add it, the style is scoped into the component only
+2. the class extends a _TailwindElement_ rather than a LitElement
 
 A _TailwindElement_ extends a _LitElmement_ (see below) and adds the logic to integrate tailwind and your styles.
 
 ## Get started
 
 To run the project:
-1) `pnpm install` (only the first time)
-2) `pnpm start` to run the server
-3) to develop the library, run `pnpm build` and copy the static assets where you need them.
+
+1. `pnpm install` (only the first time)
+2. `pnpm start` to run the server
+3. to develop the library, run `pnpm build` and copy the static assets where you need them.
 
 You may clone this repo and start developing your components by looking at the _test.component_ as reference.
 
 As an alternative, and if you like to have control over every piece, do the following:
 
-1) copy the files in the shared folder: 
+1. copy the files in the shared folder:
    - _tailwind.element.ts_ extends LitElement by adding the tailwind support
    - _tailwind.global.css_ includes tha Tailwind base classes into each component
    - _globals.d.ts_ is used to avoid TypeScript errors whe nimporting CSS/Scss files in typescript files (thanks [@emaant96](https://github.com/emaant96))
-2) copy the _package.json_ or the devDependencies inside into your own _package.json_  (**there are no dependencies**)
-3) copy _postcss.config.js_, _tailwind.config.js_ and _tsconfig.js_ 
+2. copy the _package.json_ or the devDependencies inside into your own _package.json_ (**there are no dependencies**)
+3. copy _postcss.config.js_, _tailwind.config.js_ and _tsconfig.js_
 
 That's all.
 
-
-
-
 ## Show me the pieces
+
 If you want to understand how it works, it's simple:
 
 - the **package.json** integrates these technolgies:
+
 ```json
 "autoprefixer": "^10.4.12",
 "postcss": "^8.4.18",
@@ -89,19 +94,16 @@ If you want to understand how it works, it's simple:
 - to integrate tailwind, the most important file is in _src/shared/tailwind.element.ts_
 
 ```typescript
-import {LitElement, unsafeCSS} from "lit";
+import { LitElement, unsafeCSS } from "lit";
 
 import style from "./tailwind.global.css";
 
 const tailwindElement = unsafeCSS(style);
 
 export const TailwindElement = (style) =>
-    class extends LitElement {
-
-        static styles = [tailwindElement, unsafeCSS(style)];
-    
-    };
-
+  class extends LitElement {
+    static styles = [tailwindElement, unsafeCSS(style)];
+  };
 ```
 
 It extends a _LitElement_ class at runtime and adds the component tailwind classes.
@@ -120,11 +122,10 @@ If you want to contribute or share soem thoughts, just get in touch with us.
 
 Enjoy.
 
-
 # header-component
 
 ## Install
- 
+
 ```bash
 yarn add header-component
 ```
@@ -156,6 +157,7 @@ export default {
 }
 </style>
 ```
+
 ### With Props
 
 ```js
@@ -213,6 +215,7 @@ export default {
 }
 </style>
 ```
+
 ### With Slots and custom events
 
 ```js
@@ -233,7 +236,7 @@ export default {
         d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
       />
     </svg>
-  
+
     <svg
       slot="notification-icon" /* name of the slot*/
       xmlns="http://www.w3.org/2000/svg"
@@ -272,7 +275,7 @@ export default {
         eventName: 'handle-setting', /*Note : event name should be in all lowercase letter or in kebab case format */
       }
       ],
-       
+
         topRightSlot: {
           slotName: "notification-icon",
         },
@@ -326,26 +329,46 @@ myEvent: 'myCustumEventName',
 // where my myEventHandler is a function that needs to fired when myEvent is triggered.
 ```
 
-
-
 ## Compatibility
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Electron |
-| --- | --- | --- | --- | --- |
-
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ### Props
 
-| prop                                     | type             | required | default           | possible values                                      | description                                                                                                                                                                                                                                                                           |
-| ---------------------------------------- | ---------------- | -------- | ----------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| mode                                | String           | no      | dark  |         dark, light                                           | This will apply dark or light theme to header component                                                                                                                                                                                                                                    |
-| logo                         | Url         | no       | https://example.png            |                                                      | Brand / Company logo                                                                                                                                                                     |
-| logoAltText                         | String           | no       | Company Logo               |                                                      | Adds "alt" text to logo                                                                                                                                                                                             |
-| headerText                           | String  | no       | YML               |                                                      | Brand / company name                                                                                 |
-|  openMenuIcon.slotName                    | String            | no       |                   |                                                      | A Slot which can render a HTMLElement or a component                                                                                                                                                                                                                                   |
-| closeMenuIcon.slotName                        | String           | no       |      |                                                      | A Slot which can render a HTMLElement or a component                                                                                                                                                                                                                                                |
-| menuLinks                  | Array<Object>            | no       |   |                                                      | An object that allows user to pass menu links                                                                                                                                                                                                                                                              |
-| topRightSlot.slotName                 | String            | no       |     |                                                      | A Slot which can render a HTMLElement or a component                                                                                                                                                                                                                                                              |
+| prop                   | type          | required | default             | possible values | description                                             |
+| ---------------------- | ------------- | -------- | ------------------- | --------------- | ------------------------------------------------------- |
+| mode                   | String        | no       | dark                | dark, light     | This will apply dark or light theme to header component |
+| logo                   | Url           | no       | https://example.png |                 | Brand / Company logo                                    |
+| logoAltText            | String        | no       | Company Logo        |                 | Adds "alt" text to logo                                 |
+| headerText             | String        | no       | YML                 |                 | Brand / company name                                    |
+| openMenuIcon.slotName  | String        | no       |                     |                 | A Slot which can render a HTMLElement or a component    |
+| closeMenuIcon.slotName | String        | no       |                     |                 | A Slot which can render a HTMLElement or a component    |
+| menuLinks              | Array<Object> | no       |                     |                 | An object that allows user to pass menu links           |
+| topRightSlot.slotName  | String        | no       |                     |                 | A Slot which can render a HTMLElement or a component    |
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>prop</th>
+        <th>type</th>
+        <th>required</th>
+        <th>default</th>
+        <th>possible values</th>
+        <th>description</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>mode</td>
+          <td>String</td>
+          <td>no</td>
+          <td>dark</td>
+          <td>dark, light</td>
+          <td>This will apply dark or light theme to header component</td>
+        </tr>
+    </tbody>
+</table>
 
 ### Menu Links Props
 
@@ -363,8 +386,8 @@ myEvent: 'myCustumEventName',
         <tr>
           <td>label</td>
           <td>String</td>
-            <td>yes</td>
-           <td></td>
+          <td>yes</td>
+          <td></td>
           <td>Name of the menu link</td>
         </tr>
         <tr>
@@ -390,4 +413,3 @@ myEvent: 'myCustumEventName',
       </tr>
     </tbody>
 </table>
-
