@@ -459,3 +459,16 @@ myEvent: 'myCustumEventName',
       </tr>
     </tbody>
 </table>
+
+## Accessibility
+
+Throughout the development of this component proper a11y options are set. This means things like aria-expanded , aria-label, aria-current, aria-control are set and any user can use the header component easily.
+
+## Theming
+
+User has the option to select dark or light mode of our header component by passing a 'mode' prop. By default the header component is using dark mode. 
+
+## Localization
+
+Header component supports localization, currently supports English[en], Spanish[es-419] and Chinese[zh-Hans]
+
