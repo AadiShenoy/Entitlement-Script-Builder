@@ -391,25 +391,3 @@ myEvent: 'myCustumEventName',
     </tbody>
 </table>
 
-## Installation
-
-```npm
-  npm install react-navbar-menu
-```
-
-## Live Examples
-
-https://ri4w0d.csb.app/
-## More Info
-
-https://yusuflateefblog.vercel.app/post/react-navbar-menu
-
-## Code Installation
-
-```npm
-  npm install
-```
-
-## License
-
-react-navbar-menu is released under the MIT license.
