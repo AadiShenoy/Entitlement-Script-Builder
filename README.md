@@ -335,7 +335,7 @@ myEvent: 'myCustumEventName',
 | --- | --- | --- | --- | --- |
 
 
-### Props
+## Props
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -416,7 +416,7 @@ myEvent: 'myCustumEventName',
     </tbody>
 </table>
 
-### Menu Links Props
+## Menu Links Props
 
 <table class="table table-bordered table-striped">
     <thead>
