@@ -332,20 +332,8 @@ myEvent: 'myCustumEventName',
 ## Compatibility
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Electron |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ### Props
-
-| prop                   | type          | required | default             | possible values | description                                             |
-| ---------------------- | ------------- | -------- | ------------------- | --------------- | ------------------------------------------------------- |
-| mode                   | String        | no       | dark                | dark, light     | This will apply dark or light theme to header component |
-| logo                   | Url           | no       | https://example.png |                 | Brand / Company logo                                    |
-| logoAltText            | String        | no       | Company Logo        |                 | Adds "alt" text to logo                                 |
-| headerText             | String        | no       | YML                 |                 | Brand / company name                                    |
-| openMenuIcon.slotName  | String        | no       |                     |                 | A Slot which can render a HTMLElement or a component    |
-| closeMenuIcon.slotName | String        | no       |                     |                 | A Slot which can render a HTMLElement or a component    |
-| menuLinks              | Array<Object> | no       |                     |                 | An object that allows user to pass menu links           |
-| topRightSlot.slotName  | String        | no       |                     |                 | A Slot which can render a HTMLElement or a component    |
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -431,10 +419,10 @@ myEvent: 'myCustumEventName',
 <table class="table table-bordered table-striped">
     <thead>
     <tr>
-        <th style="width: 100px;">name</th>
-        <th style="width: 50px;">type</th>
-        <th style="width: 100px;">required</th>
-        <th style="width: 50px;">possible values</th>
+        <th>name</th>
+        <th>type</th>
+        <th>required</th>
+        <th>possible values</th>
         <th>description</th>
     </tr>
     </thead>
