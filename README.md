@@ -294,6 +294,7 @@ export default {
 #app {
 }
 </style>
+```
 
 ### With React
 
