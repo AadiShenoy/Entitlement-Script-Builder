@@ -367,6 +367,62 @@ myEvent: 'myCustumEventName',
           <td>dark, light</td>
           <td>This will apply dark or light theme to header component</td>
         </tr>
+        <tr>
+          <td>logo</td>
+          <td>Url</td>
+          <td>no</td>
+          <td>https://example.png</td>
+          <td></td>
+          <td>Brand / Company logo</td>
+        </tr>		
+        <tr>
+          <td>logoAltText</td>
+          <td>String</td>
+          <td>no</td>
+          <td>Company Logo</td>
+          <td></td>
+          <td>Adds "alt" text to logo</td>
+        </tr>
+        <tr>
+          <td>headerText</td>
+          <td>String</td>
+          <td>no</td>
+          <td>YML</td>
+          <td></td>
+          <td>Brand / company name</td>
+        </tr>
+        <tr>
+          <td>openMenuIcon.slotName</td>
+          <td>String</td>
+          <td>no</td>
+          <td></td>
+          <td></td>
+          <td>A Slot which can render a HTMLElement or a component</td>
+        </tr>
+        <tr>
+          <td>closeMenuIcon.slotName</td>
+          <td>String</td>
+          <td>no</td>
+          <td></td>
+          <td></td>
+          <td>A Slot which can render a HTMLElement or a component</td>
+        </tr>
+         <tr>
+          <td>menuLinks</td>
+          <td>Array[object]</td>
+          <td>no</td>
+          <td></td>
+          <td></td>
+          <td>An Array of object that allows user to pass menu links</td>
+        </tr>
+        <tr>
+          <td>topRightSlot.slotName</td>
+          <td>String</td>
+          <td>no</td>
+          <td></td>
+          <td></td>
+          <td>A Slot which can render a HTMLElement or a component</td>
+        </tr>
     </tbody>
 </table>
 
