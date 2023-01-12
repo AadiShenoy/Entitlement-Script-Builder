@@ -165,32 +165,35 @@ myEvent: 'myCustumEventName',
 // where my myEventHandler is a function that needs to fired when myEvent is triggered.
 ```
 
-### With Vue
+## With Vue
+
+### With default value
+
+```js
+<template>
+  <header-component>
+  </header-component>
+</template>
+
+<script>
+export default {
+  name: "App"
+};
+</script>
+
+<style>
+#app {
+}
+</style>
+```
+### With Props
 
 ```js
 <template>
   <header-component
     :navOptions="navOptions"
-    @map-click="handleMapClick"
-    @setting-click="handleSetting"
   >
-    <svg
-      slot="slot-div"
-      class="h-6 w-6"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="white"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      aria-hidden="true"
-      @click="handleNotification"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-      />
-    </svg>
+  <button slot="notification">Notification</button>
   </header-component>
 </template>
 
@@ -227,49 +230,33 @@ export default {
           },
         ],
         topRightSlot: {
-          slotName: "slot-div",
+          slotName: "notification",
         },
       },
     };
-  },
-  methods: {
-    handleMapClick() {
-      console.log("Map");
-    },
-    handleSetting() {
-      console.log("Settings");
-    },
-    handleNotification() {
-      alert("New Notification");
-    },
-  },
+  }
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 </style>
 ```
+
 
 ## Compatibility
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Electron |
 | --- | --- | --- | --- | --- |
-| IE11, Edge | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
 
 ### Props
 
 | prop                                     | type             | required | default           | possible values                                      | description                                                                                                                                                                                                                                                                           |
 | ---------------------------------------- | ---------------- | -------- | ----------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | mode                                | String           | no      | dark  |         dark, light                                           | This will apply dark or light theme to header component                                                                                                                                                                                                                                    |
-| logo                         | Url         | no       | https://ymedialabs.atlassian.net/s/1jmxwi/b/8/d35727372e299c952e88a10ef82bbaf6/_/jira-logo-scaled.png"             |                                                      | Brand/Company logo                                                                                                                                                                     |
-| logoAltText                         | String           | no       | Company Logo               |                                                      | Add "alt" text to logo                                                                                                                                                                                             |
+| logo                         | Url         | no       | https://example.png            |                                                      | Brand/Company logo                                                                                                                                                                     |
+| logoAltText                         | String           | no       | Company Logo               |                                                      | Adds "alt" text to logo                                                                                                                                                                                             |
 | brandImagePath                           | String or Object | no       | '/'               |                                                      | Link path of menu-option. If you have `isUsingVueRouter === true`, then this needs to be an `Object` with a `name` property or just a `String` of your path. Otherwise, just provide a `String`. link                                                                                 |
 | brandImage                               | Image            | no       |                   |                                                      | `import` your image here to use your brand image                                                                                                                                                                                                                                      |
 | brandImageAltText                        | String           | no       | 'brand-image'     |                                                      | The `alt` tag text for your brand image                                                                                                                                                                                                                                               |
