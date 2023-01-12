@@ -255,110 +255,60 @@ export default {
 | prop                                     | type             | required | default           | possible values                                      | description                                                                                                                                                                                                                                                                           |
 | ---------------------------------------- | ---------------- | -------- | ----------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | mode                                | String           | no      | dark  |         dark, light                                           | This will apply dark or light theme to header component                                                                                                                                                                                                                                    |
-| logo                         | Url         | no       | https://example.png            |                                                      | Brand/Company logo                                                                                                                                                                     |
+| logo                         | Url         | no       | https://example.png            |                                                      | Brand / Company logo                                                                                                                                                                     |
 | logoAltText                         | String           | no       | Company Logo               |                                                      | Adds "alt" text to logo                                                                                                                                                                                             |
-| brandImagePath                           | String or Object | no       | '/'               |                                                      | Link path of menu-option. If you have `isUsingVueRouter === true`, then this needs to be an `Object` with a `name` property or just a `String` of your path. Otherwise, just provide a `String`. link                                                                                 |
-| brandImage                               | Image            | no       |                   |                                                      | `import` your image here to use your brand image                                                                                                                                                                                                                                      |
-| brandImageAltText                        | String           | no       | 'brand-image'     |                                                      | The `alt` tag text for your brand image                                                                                                                                                                                                                                               |
-| collapseButtonImageOpen                  | Image            | no       | A hamburger icon  |                                                      | `import` your image here                                                                                                                                                                                                                                                              |
-| collapseButtonImageClose                 | Image            | no       | A times icon      |                                                      | `import` your image here                                                                                                                                                                                                                                                              |
-| collapseButtonOpenColor                  | String           | no       | `#373737`         |                                                      | CSS hex - `#FFF`. Only applicable if you don't supply a `collapseButtonImageOpen`.                                                                                                                                                                                                    |
-| collapseButtonCloseColor                 | String           | no       | `#373737`         |                                                      | CSS hex - `#FFF`. Only applicable if you don't supply a `collapseButtonImageClose`.                                                                                                                                                                                                   |
-| showBrandImageInMobilePopup              | Boolean          | no       | false             |                                                      | If you want to show your brand logo in the mobile popup                                                                                                                                                                                                                               |
-| ariaLabelMainNav                         | String           | no       | 'Main Navigation' |                                                      | The `aria-label` value for the main navbar element                                                                                                                                                                                                                                    |
-| tooltipAnimationType                     | String           | no       | 'shift-away'      | 'shift-away', 'shift-toward', 'scale', 'perspective' | See [tippy.js docs](https://atomiks.github.io/tippyjs/all-options/)                                                                                                                                                                                                                   |
-| tooltipPlacement                         | String           | no       | 'bottom'          | 'top', 'bottom', 'left', 'right' ... and more.       | See [tippy.js docs](https://atomiks.github.io/tippyjs/v6/all-props/#placement) for the complete list. Also, make sure to cross reference with popper.js's options. The tooltip dropdown will always drop in the direction you set here.                                               |
-| menuOptionsLeft                          | Object           | no       | {}                |                                                      | Menu options that will be _pulled_ to the left towards the `brand-image`                                                                                                                                                                                                              |
-| menuOptionsLeft.type                     | String           | yes      |                   | 'link', 'button', 'spacer', 'dropdown'               | What type of link will this menu-option be? `link` will be a link, `button` will be a button, `spacer` will be a spacer with a width of `30px` , `dropdown` will create a dropdown on desktop and a `ul/li` list on mobile. `dropdown` only works on menuOptions, not subMenuOptions. |
-| menuOptionsLeft.text                     | String           | yes      |                   |                                                      | Text of menu-option                                                                                                                                                                                                                                                                   |
-| menuOptionsLeft.path                     | String or Object | yes      |                   |                                                      | Link path of menu-option. If you have `isUsingVueRouter === true`, then this needs to be an `Object` with a `name` property or just a `String` of your path. Otherwise, just provide a `String`. Not applicable to `dropdown` menuOption types                                        |
-| menuOptionsLeft.arrowColor               | String           | no       |                   |                                                      | CSS hex - `#FFF`. This styles the little chevron icon.                                                                                                                                                                                                                                |
-| menuOptionsLeft.class                    | String           | no       |                   |                                                      | Only for `menuOptionsLeft.type === 'button'` - provide a class name so you can style your buttons                                                                                                                                                                                     |
-| menuOptionsLeft.isLinkAction             | Boolean          | no       | false             |                                                      | When `true` , the `path` option of the `menuOption` will not fire - instead, you'll be able to register for the `@vnb-item-clicked` event which will spit you out the `text` value of your `menuOption` . That way, you can do an action you may want to trigger.                     |
-| menuOptionsLeft.iconLeft                 | HTML String      | no       |                   |                                                      | Only for `menuOptionsLeft.type === 'link or menuOptionsLeft.type === 'dropdown'`. HTML string of the icon you want to use. See more info on the `Icon` section of the README.                                                                                                         |
-| menuOptionsLeft.iconRight                | HTML String      | no       |                   |                                                      | Only for `menuOptionsLeft.type === 'link or menuOptionsLeft.type === 'dropdown'`. HTML string of the icon you want to use. See more info on the `Icon` section of the README.                                                                                                         |
-| menuOptionsLeft.subMenuOptions           | Object           | no       |                   |                                                      | Sub-menu-options that will be shown                                                                                                                                                                                                                                                   |
-| menuOptionsLeft.subMenuOptions.type      | String           | yes      |                   | 'link', 'hr'                                         | What type of link will this sub-menu-option be? `link` will be a link, `hr` will be a `hr` spacer                                                                                                                                                                                     |
-| menuOptionsLeft.subMenuOptions.text      | String           | yes      |                   |                                                      | Text of sub-menu-option                                                                                                                                                                                                                                                               |
-| menuOptionsLeft.subMenuOptions.subText   | String           | no       |                   |                                                      | Sub text of sub-menu-option                                                                                                                                                                                                                                                           |
-| menuOptionsLeft.subMenuOptions.path      | String           | yes      |                   |                                                      | Link path of sub-menu-option                                                                                                                                                                                                                                                          |
-| menuOptionsLeft.subMenuOptions.iconLeft  | HTML String      | no       |                   |                                                      | HTML string of the icon you want to use. See more info on the `Icon` section of the README.                                                                                                                                                                                           |
-| menuOptionsLeft.subMenuOptions.iconRight | HTML String      | no       |                   |                                                      | HTML string of the icon you want to use. See more info on the `Icon` section of the README.                                                                                                                                                                                           |
-| menuOptionsRight                         | Object           | no       | {}                |                                                      | Menu options that will be pushed to the right of the navbar. See above - all `menuOptionsLeft` apply                                                                                                                                                                                  |
+| headerText                           | String  | no       | YML               |                                                      | Brand / company name                                                                                 |
+|  openMenuIcon.slotName                    | String            | no       |                   |                                                      | A Slot which can render a HTMLElement or a component                                                                                                                                                                                                                                   |
+| closeMenuIcon.slotName                        | String           | no       |      |                                                      | A Slot which can render a HTMLElement or a component                                                                                                                                                                                                                                                |
+| menuLinks                  | Array<Object>            | no       |   |                                                      | An object that allows user to pass menu links                                                                                                                                                                                                                                                              |
+| topRightSlot.slotName                 | String            | no       |     |                                                      | A Slot which can render a HTMLElement or a component                                                                                                                                                                                                                                                              |
 
 
-### Menu Items Props
+
+
+### Menu Links Props
 
 <table class="table table-bordered table-striped">
     <thead>
     <tr>
         <th style="width: 100px;">name</th>
         <th style="width: 50px;">type</th>
-        <th style="width: 50px;">default</th>
-        <th>description</th>
+      <th style="width: 100px;">required</th>
+       <th style="width: 50px;">possible values</th>
+       <th style="width: 50px;">description</th>
+      
     </tr>
     </thead>
     <tbody>
         <tr>
-          <td>MenuNumber</td>
-          <td>Number</td>
-          <td></td>
-          <td>The MenuNumber denotes 'how many menu-items you want. Although Maximum is 5 and minimum is 1'</td>
+          <td>label</td>
+          <td>String</td>
+            <td>yes</td>
+           <td></td>
+          <td>Name of the menu link</td>
+         
         </tr>
         <tr>
-          <td>Font</td>
-          <td>Number</td>
-          <td></td>
-          <td>{optional}Specify the font-size. As the icons increase and decrease, Height will adjust automatically but Width will need to be adjusted maually</td>
+          <td>type</td>
+          <td>String</td>
+          <td>yes</td>
+          <td>link | button</td>
+          <td>If given 'link', user must provide an url. If given 'button', user must provide an custom event name ('eventName')  </td>
         </tr>
         <tr>
-            <td>IconColor</td>
+            <td>url</td>
             <td>String</td>
-            <th>""</th>
-            <td>Specify the color for the menu items/ navbar menu items e.g. "blue","#a595e9"</td>
+            <td>If type='link', yes else no</td>
+            <td></td>
+            <td>url</td>
         </tr>
         <tr>
-            <td>activeColor</td>
+            <td>eventName</td>
             <td>String</td>
-            <th>""</th>
-            <td>Specify the background color for the active menu items/ navbar menu items e.g. "blue","#a595e9"</td>
-        </tr>
-        <tr>
-            <td>activeIconColor</td>
-            <td>String</td>
-            <th>""</th>
-            <td>Specify the color for the menu item/ navbar menu item e.g. "blue","#a595e9"</td>
-        </tr>
-        <tr>
-            <td>degree</td>
-            <td>String</td>
-            <th>""</th>
-            <td>{Optional} This is part of linear-gradient(degree, gradcolor1,gradcolor2), this will inturn overwrite activeColor and become the active background color. Specify the direction of background color for the active menu item/ navbar menu items e.g. "to left", "to right", "to bottom left" etc.</td>
-        </tr>
-        <tr>
-            <td>gradcolor1</td>
-            <td>String</td>
-            <th>""</th>
-            <td>{Optional} This is part of linear-gradient(degree, gradcolor1,gradcolor2), this will inturn overwrite activeColor and become the active background color. Specify the direction of background color for the active menu item/ navbar menu items e.g. "blue" etc.</td>
-        </tr>
-        <tr>
-            <td>gradcolor2</td>
-            <td>String</td>
-            <th>""</th>
-            <td>{Optional} This is part of linear-gradient(degree, gradcolor1,gradcolor2), this will inturn overwrite activeColor and become the active background color. Specify the direction of background color for the active menu item/ navbar menu items e.g. "green" etc.</td>
-        </tr>
-        <tr>
-            <td>icon1, icon2... icon5</td>
-            <td>String</td>
-            <th>""</th>
-            <td>Specify the name of the icon for each specific icon number(icon1, icon2) for the menu item/ navbar menu items. e.g. "bx bx-home", "fa fa-house" etc.</td>
-        </tr>
-        <tr>
-            <td>url1, url2... url5</td>
-            <td>String</td>
-            <th>""</th>
-            <td>Specify the name of the url for each specific url number(url1, url2) for the menu item/ navbar menu items. e.g. "/", "#contact" etc.</td>
-        </tr>
+            <td>If type='button', yes else no</td>
+            <td></td>
+            <td>custom event name triggered on click of a button</td>
+      </tr>
     </tbody>
 </table>
 
