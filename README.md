@@ -135,36 +135,6 @@ npm i header-component
 
 ## Usage
 
-### With React
-
-```js
-import React from 'react'
-Install the package - npm i @lit-labs/react
-
-Usage
-import * as React from 'react';
-import {createComponent} from '@lit-labs/react';
-import {MyElement} from './my-element.js';
-
-export const MyElementComponent = createComponent({
-tagName: 'my-element',
-elementClass: MyElement,
-react: React,
-events: {
-myEvent: 'myCustumEventName',
-},
-});
-
-// where myEvent is the event name given to the custom event defined in the lit component.
-// In the above example 'myCustumEventName' is the custom event.
-
-// After defining the React component, you can use it just as you would use any other React component.
-// <MyElementComponent
-// myEvent: {myEventHandler}
-// />
-// where my myEventHandler is a function that needs to fired when myEvent is triggered.
-```
-
 ## With Vue
 
 ### With default value
@@ -301,7 +271,7 @@ export default {
         type: 'button',
         eventName: 'handle-setting', /*Note : event name should be in all lowercase letter or in kebab case format */
       }
-      ]
+      ],
        
         topRightSlot: {
           slotName: "notification-icon",
@@ -324,6 +294,37 @@ export default {
 #app {
 }
 </style>
+
+### With React
+
+```js
+import React from 'react'
+Install the package - npm i @lit-labs/react
+
+Usage
+import * as React from 'react';
+import {createComponent} from '@lit-labs/react';
+import {MyElement} from './my-element.js';
+
+export const MyElementComponent = createComponent({
+tagName: 'my-element',
+elementClass: MyElement,
+react: React,
+events: {
+myEvent: 'myCustumEventName',
+},
+});
+
+// where myEvent is the event name given to the custom event defined in the lit component.
+// In the above example 'myCustumEventName' is the custom event.
+
+// After defining the React component, you can use it just as you would use any other React component.
+// <MyElementComponent
+// myEvent: {myEventHandler}
+// />
+// where my myEventHandler is a function that needs to fired when myEvent is triggered.
+```
+
 
 
 ## Compatibility
