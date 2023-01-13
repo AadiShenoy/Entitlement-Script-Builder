@@ -406,6 +406,14 @@ myEvent: 'myCustumEventName',
           <td>An Array of object that allows user to pass menu links</td>
         </tr>
         <tr>
+          <td>isMenuOpen</td>
+          <td>Boolean</td>
+          <td>no</td>
+          <td>false</td>
+          <td></td>
+          <td>To keep menulinks open on mobile view by default.</td>
+        </tr>
+        <tr>
           <td>topRightSlot.slotName</td>
           <td>String</td>
           <td>no</td>
