@@ -434,13 +434,12 @@ function App() {
 }
 export default App;
 ```
-## styling
+## Styling
 
 ### Styling the Custom Component
-ref: https://developer.mozilla.org/en-US/docs/Web/CSS/::part
+Ref: https://developer.mozilla.org/en-US/docs/Web/CSS/::part
 
 ```style.scss
-https://developer.mozilla.org/en-US/docs/Web/CSS/::part
 //The ::part CSS pseudo-element represents any element within a shadow tree that has a matching part attribute.
 header-component::part(nav) { /*Note : header-component is the custom component and nav is the name given to the the part attribute in element within header-components */
 background: yellow ;
