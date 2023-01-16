@@ -303,7 +303,7 @@ React can render Web Components, but it cannot easily pass React props to custom
 This Web-Component wrapper package- (https://www.npmjs.com/package/reactify-wc) correctly passes React props to properties accepted by the custom element and listens for events dispatched by the custom element.
 
 ```bash
-Install - npm i reactify-wc
+npm i reactify-wc
 ```
 
 ### With default value
@@ -437,9 +437,10 @@ export default App;
 ## styling
 
 ### Styling the Custom Component
+ref: https://developer.mozilla.org/en-US/docs/Web/CSS/::part
 
 ```style.scss
-//https://developer.mozilla.org/en-US/docs/Web/CSS/::part
+https://developer.mozilla.org/en-US/docs/Web/CSS/::part
 //The ::part CSS pseudo-element represents any element within a shadow tree that has a matching part attribute.
 header-component::part(nav) { /*Note : header-component is the custom component and nav is the name given to the the part attribute in element within header-components */
 background: yellow ;
